@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Img Slider</title>
+  <link rel="stylesheet" href="slider.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+    rel="stylesheet">
+
+</head>
+
+<body>
+  <h2>Image Slider</h2>
+  <div class="main-container">
+    <img alt="Back" class="icon-1" src="fast-forward.png">
+    <div class="container">
+      <img src="1.jpg" alt="No Image">
+      <img src="2.jpg" alt="No Image">
+      <img src="3.jpg" alt="No Image">
+      <img src="4.jpg" alt="No Image">
+      <img src="7.jpg" alt="No Image">
+      <img src="8.jpg" alt="No Image">
+      <img src="9.jpg" alt="No Image">
+      <img src="10.jpg" alt="No Image">
+      <img src="11.jpg" alt="No Image">
+    </div>
+    <img alt="Next" class="icon-2" src="fast-backward.png">
+  </div>
+</body>
+
+</html>
+<script>
+  var left = document.querySelector(".icon-1");
+  var right = document.querySelector(".icon-2");
+  var scrollContainer = document.querySelector(".container");
+
+  scrollContainer.addEventListener("wheel", (e) => {
+    e.preventDefault();
+    scrollContainer.scrollLeft += e.deltaY;
+  });
+
+  right.addEventListener("click", () => {
+    scrollContainer.scrollLeft += 210;
+  })
+
+  left.addEventListener("click", () => {
+    scrollContainer.scrollLeft -= 210;
+  })
+</script>
